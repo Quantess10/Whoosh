@@ -2,16 +2,64 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Wyszukiwarka</title>
+    <title>Wyszukiwarka</title>    
+
+    <style>
+        #suggestions {
+            border: 2px solid red; 
+            padding: 10px;
+        }
+        
+        #suggestions div {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            border-bottom: 1px solid #000000;
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+        
+        #suggestions div:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+    
+
 </head>
 <body>
     <h1>Wyszukiwarka</h1>
     <form action="/search" method="get">
-        <input type="text" name="query" placeholder="Wpisz szukaną frazę...">
+        <input type="text" id="query" placeholder="Wpisz szukaną frazę...">
         <button type="submit">Szukaj</button>
+        <div id="suggestions"></div>
     </form>
     <div id="results">
         <!-- Wyniki wyszukiwania zostaną wyświetlone tutaj -->
     </div>
+
+    
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#query').on('input', function() {
+            var inputText = $(this).val();
+            if (inputText.length > 2) {
+                $.getJSON('/autocomplete', {prefix: inputText}, function(data) {
+                    $('#suggestions').empty();
+                    data.forEach(function(item) {
+                        item.content.forEach(function(snippet) {
+                            $('#suggestions').append($('<div/>').html(snippet));
+                        });
+                    });
+                });
+            } else {
+                $('#suggestions').empty();
+            }
+        });
+    });
+    </script>
+
 </body>
 </html>

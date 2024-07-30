@@ -10,6 +10,10 @@ Rozwiązywanie problemów
 W przypadku napotkania trudności podczas użytkowania oprogramowania, ten rozdział oferuje wskazówki i potencjalne rozwiązania na najczęściej występujące problemy. Skorzystaj z porad zawartych w tym dokumencie, aby szybko rozwiązać problem.
 
 ---
+Rozwiązywanie problemów aktualizacji
+W przypadku napotkania trudności podczas wykonywania aktualizacji oprogramowania, ten rozdział oferuje wskazówki i potencjalne rozwiązania na najczęściej występujące problemy. Skorzystaj z porad zawartych w tym dokumencie, aby szybko rozwiązać problem.
+
+---
 Aktualizacje i utrzymanie
 Regularne aktualizacje oprogramowania są niezbędne do utrzymania jego funkcjonalności oraz bezpieczeństwa. W tym dokumencie znajdziesz informacje na temat procesu aktualizacji oraz sposobów na utrzymanie oprogramowania w optymalnym stanie.
 
